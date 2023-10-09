@@ -1,0 +1,15 @@
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+def substring(str, dictionary)
+  result = Hash.new(0)
+  dictionary.each do |d|
+    count = str.downcase.scan(d).count
+    unless (count == 0)
+      result[d] += count
+    end
+  end
+
+  return result
+end
+
+substring("Howdy partner, sit down! How's it going?", dictionary)
+substring('below', dictionary)
